@@ -1,0 +1,21 @@
+:root {
+    --cor-fundo: #F6F4FF;
+    --cor-card: #FFFFFF;
+    --cor-texto: #2D2A3E;
+    --cor-destaque: #7C5CFC;
+
+    --fonte-texto: 'Poppins', sans-serif;
+    --fonte-resultados: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
