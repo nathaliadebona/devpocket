@@ -19,3 +19,26 @@ body {
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
 }
+
+header {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--cor-destaque);
+}
+
+main {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+}
+
+section {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--cor-card);
+    box-shadow: 0 4px 20px rgba(124, 92, 252, 0.12);
+}
+
