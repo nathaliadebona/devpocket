@@ -3,6 +3,7 @@
     --cor-card: #FFFFFF;
     --cor-texto: #2D2A3E;
     --cor-destaque: #7C5CFC;
+    --cor-destaque-secundária: #b8a6ff;
 
     --fonte-texto: 'Poppins', sans-serif;
     --fonte-resultados: 'JetBrains Mono', monospace;
@@ -41,4 +42,46 @@ section {
     background-color: var(--cor-card);
     box-shadow: 0 4px 20px rgba(124, 92, 252, 0.12);
 }
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--cor-destaque);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campo label {
+    font-weight: 500;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.3rem;
+    border: 0.0625rem solid var(--cor-destaque-secundária);
+    font-family: inherit;
+    border-radius: 0.3rem;
+}
+
+.campo input:focus {
+    border-color: var(--cor-destaque);
+    outline: none;
+}
+
+#resultado {
+    font-family: var(--fonte-resultados);
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+}
+
+
 
