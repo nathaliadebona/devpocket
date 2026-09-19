@@ -42,6 +42,32 @@
 
         <section>
             <h2>Conversor de Cores</h2>
+
+            <div id="cor-preview"></div>
+
+            <form>
+                <div class="campo">
+                    <label for="valor-hex">HEX</label>
+                    <input type="text" id="valor-hex" maxlength="7" value="#7C5CFC">
+                </div>
+
+                <div class="campo-cor">
+                    <label for="seletor-cor">Seletor de cor</label>
+                    <input type="color" id="seletor-cor" value="#7C5CFC">
+                </div>
+                
+                <div class="campo-resultado">
+                    <label for="resultado-rgb">Resultado RGB</label>
+                    <output id="resultado-rgb">rgb(124, 92, 252)</output>
+                    <button type="button" aria-label="Copiar RGB" class="botao-copiar">Copiar</button>
+                </div>
+                
+                <div class="campo-resultado">
+                    <label for="resultado-hsl">Resultado HSL</label>
+                    <output id="resultado-hsl">252°, 96%, 67%</output>
+                    <button type="button" aria-label="Copiar HSL" class="botao-copiar">Copiar</button>
+                </div>
+            </form>
         </section>
 
         <section>
