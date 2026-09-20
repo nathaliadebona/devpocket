@@ -46,7 +46,57 @@ function converterCor() {
     const b = parseInt(hex.slice(5, 7), 16);
 
     resultadoRgb.textContent = `rgb(${r}, ${g}, ${b})`;
+
+    const hsl = rgbParaHsl(r, g, b);
+    resultadoHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+
     corPreview.style.backgroundColor = hex;
 }
 
 valorHex.addEventListener('input', converterCor);
+
+function rgbParaHsl(r, g, b) {
+    const rNorm = r / 255;
+    const gNorm = g / 255;
+    const bNorm = b / 255;
+
+    const max = Math.max(rNorm, gNorm, bNorm);
+    const min = Math.min(rNorm, gNorm, bNorm);
+    const delta = max - min;
+
+    const l = (max + min) / 2;
+    let h = 0;
+    let s = 0;
+
+    if (delta !== 0) {
+        s = delta / (1 - Math.abs(2 * l - 1));
+
+        if (max === rNorm) {
+            h = ((gNorm - bNorm) / delta) % 6;
+        } else if (max === gNorm) {
+            h = (bNorm - rNorm) / delta + 2;
+        } else {
+            h = (rNorm - gNorm) / delta + 4;
+        }
+
+        h = h * 60;
+
+        if (h < 0) {
+            h = h + 360;
+        }
+    }
+
+    return {
+        h: Math.round(h),
+        s: Math.round(s * 100),
+        l: Math.round(l * 100)
+    };
+
+    resultadoRgb.textContent = `rgb(${r}, ${g}, ${b})`;
+
+    const hsl = rgbParaHsl(r, g, b);
+    resultadoHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+
+    corPreview.style.backgroundColor = hex;
+
+}
