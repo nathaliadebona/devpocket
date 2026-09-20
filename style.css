@@ -142,6 +142,59 @@ output {
     opacity: 0.85;
 }
 
+.gerador-preview {
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--cor-fundo);
+}
+
+#gerador-preview-caixa {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    background-color: var(--cor-card);
+    box-shadow: 0px 4px 20px rgba(124, 92, 252, 0.12);
+}
+
+.controle {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.controle,
+.controle-cor {
+    font-weight: 500;
+}
+
+.controle input {
+    grid-column: 1 / -1;
+    accent-color: var(--cor-destaque);
+}
+
+.controle span {
+    font-family: var(--fonte-resultados);
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    color: var(--cor-destaque);
+}
+
+.controle-cor {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controle-cor input {
+    width: 4rem;
+    height: 2rem;
+}
+
+#resultado-sombra {
+    overflow-wrap: break-word;
+}
 
 
 
