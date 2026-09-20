@@ -7,6 +7,8 @@ const resultadoRgb = document.getElementById('resultado-rgb');
 const resultadoHsl = document.getElementById('resultado-hsl');
 const corPreview = document.getElementById('cor-preview');
 
+const seletorCor = document.getElementById('seletor-cor');
+
 const formatoHex = /^#[0-9A-Fa-f]{6}$/;
 
 // ---- Conversor de medidas ----//
@@ -40,6 +42,8 @@ function converterCor() {
         resultadoHsl.textContent = '—';
         return;
     }
+
+    seletorCor.value = valorHex.value;
 
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
@@ -91,12 +95,11 @@ function rgbParaHsl(r, g, b) {
         s: Math.round(s * 100),
         l: Math.round(l * 100)
     };
-
-    resultadoRgb.textContent = `rgb(${r}, ${g}, ${b})`;
-
-    const hsl = rgbParaHsl(r, g, b);
-    resultadoHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-
-    corPreview.style.backgroundColor = hex;
-
 }
+
+function atualizarPeloSeletor() {
+    valorHex.value = seletorCor.value;
+    converterCor();
+}
+
+seletorCor.addEventListener('input', atualizarPeloSeletor);
