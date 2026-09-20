@@ -3,7 +3,7 @@
     --cor-card: #FFFFFF;
     --cor-texto: #2D2A3E;
     --cor-destaque: #7C5CFC;
-    --cor-destaque-secundária: #b8a6ff;
+    --cor-destaque-secundaria: #b8a6ff;
 
     --fonte-texto: 'Poppins', sans-serif;
     --fonte-resultados: 'JetBrains Mono', monospace;
@@ -67,7 +67,7 @@ form {
 .campo input {
     width: 100%;
     padding: 0.3rem;
-    border: 0.0625rem solid var(--cor-destaque-secundária);
+    border: 0.0625rem solid var(--cor-destaque-secundaria);
     font-family: inherit;
     border-radius: 0.3rem;
 }
@@ -77,11 +77,71 @@ form {
     outline: none;
 }
 
-#resultado {
+#cor-preview {
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border-color: var(--cor-destaque-secundaria);
+    background-color: var(--cor-destaque);
+}
+.campo-cor {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#seletor-cor {
+    width: 4rem;
+    height: 2rem;
+}
+
+.campo-resultado {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: stretch;
+}
+
+.campo-resultado label {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+output {
+    padding: 0.5rem 1rem ;
     font-family: var(--fonte-resultados);
     font-size: 1.5rem;
     color: var(--cor-destaque);
+    border: 0.0625rem solid var(--cor-destaque-secundaria);
+    border-radius: 0.3rem;
+    background-color: var(--cor-fundo);
 }
+
+.campo-resultado output {
+    padding: 0.5rem 1rem;
+    border: 0.0625rem solid var(--cor-destaque-secundaria);
+    border-right: none;
+    font-size: 1.25rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+    background-color: var(--cor-fundo);
+}
+
+.botao-copiar {
+    padding: 0 1rem;
+    border: none;
+    font-family: inherit;
+    color: var(--cor-card);
+    border-radius: 0 0.3rem 0.3rem 0;
+    background-color: var(--cor-destaque);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.botao-copiar:hover {
+    opacity: 0.85;
+}
+
 
 
 
