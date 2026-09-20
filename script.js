@@ -45,19 +45,25 @@ function converterCor() {
 
     seletorCor.value = valorHex.value;
 
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
+    const rgb = hexParaRgb(hex);
 
-    resultadoRgb.textContent = `rgb(${r}, ${g}, ${b})`;
+    resultadoRgb.textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
 
-    const hsl = rgbParaHsl(r, g, b);
+    const hsl = rgbParaHsl(rgb.r, rgb.g, rgb.b);
     resultadoHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
 
     corPreview.style.backgroundColor = hex;
 }
 
 valorHex.addEventListener('input', converterCor);
+
+function hexParaRgb(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+
+    return { r, g, b };
+}
 
 function rgbParaHsl(r, g, b) {
     const rNorm = r / 255;
@@ -103,3 +109,6 @@ function atualizarPeloSeletor() {
 }
 
 seletorCor.addEventListener('input', atualizarPeloSeletor);
+
+// ---- Gerador de CSS ---- //
+
