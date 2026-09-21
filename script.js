@@ -119,15 +119,30 @@ const spanHorizontal = document.getElementById('valor-deslocamento-horizontal');
 const spanVertical = document.getElementById('valor-deslocamento-vertical');
 const spanDesfoque = document.getElementById('valor-desfoque');
 const spanOpacidade = document.getElementById('valor-opacidade');
+const caixaPreview = document.getElementById('gerador-preview-caixa');
+const seletorCorSombra = document.getElementById('cor-sombra');
+const resultadoSombra = document.getElementById('resultado-sombra');
 
 function atualizarSombra() {
     spanHorizontal.textContent = sliderHorizontal.value + 'px';
     spanVertical.textContent = sliderVertical.value + 'px';
     spanDesfoque.textContent = sliderDesfoque.value + 'px';
     spanOpacidade.textContent = sliderOpacidade.value + '%';
+
+    const rgbSombra = hexParaRgb(seletorCorSombra.value);
+    const opacidade = sliderOpacidade.value / 100;
+
+    const sombra = `${sliderHorizontal.value}px ${sliderVertical.value}px ${sliderDesfoque.value}px rgba(${rgbSombra.r}, ${rgbSombra.g}, ${rgbSombra.b}, ${opacidade})`;
+
+    caixaPreview.style.boxShadow = sombra;
+    resultadoSombra.textContent = `box-shadow: ${sombra};`;
+
 }
 
 sliderHorizontal.addEventListener('input', atualizarSombra);
 sliderVertical.addEventListener('input', atualizarSombra);
 sliderDesfoque.addEventListener('input', atualizarSombra);
 sliderOpacidade.addEventListener('input', atualizarSombra);
+seletorCorSombra.addEventListener('input', atualizarSombra);
+
+atualizarSombra();
