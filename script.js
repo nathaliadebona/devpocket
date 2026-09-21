@@ -111,4 +111,23 @@ function atualizarPeloSeletor() {
 seletorCor.addEventListener('input', atualizarPeloSeletor);
 
 // ---- Gerador de CSS ---- //
+const sliderHorizontal = document.getElementById('deslocamento-horizontal');
+const sliderVertical = document.getElementById('deslocamento-vertical');
+const sliderDesfoque = document.getElementById('desfoque');
+const sliderOpacidade = document.getElementById('opacidade');
+const spanHorizontal = document.getElementById('valor-deslocamento-horizontal');
+const spanVertical = document.getElementById('valor-deslocamento-vertical');
+const spanDesfoque = document.getElementById('valor-desfoque');
+const spanOpacidade = document.getElementById('valor-opacidade');
 
+function atualizarSombra() {
+    spanHorizontal.textContent = sliderHorizontal.value + 'px';
+    spanVertical.textContent = sliderVertical.value + 'px';
+    spanDesfoque.textContent = sliderDesfoque.value + 'px';
+    spanOpacidade.textContent = sliderOpacidade.value + '%';
+}
+
+sliderHorizontal.addEventListener('input', atualizarSombra);
+sliderVertical.addEventListener('input', atualizarSombra);
+sliderDesfoque.addEventListener('input', atualizarSombra);
+sliderOpacidade.addEventListener('input', atualizarSombra);
