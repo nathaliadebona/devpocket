@@ -146,3 +146,18 @@ sliderOpacidade.addEventListener('input', atualizarSombra);
 seletorCorSombra.addEventListener('input', atualizarSombra);
 
 atualizarSombra();
+
+const botoesCopiar = document.querySelectorAll('.botao-copiar');
+
+botoesCopiar.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        const textoResultado = botao.previousElementSibling.textContent;
+        navigator.clipboard.writeText(textoResultado);
+
+        botao.textContent = 'Copiado!';
+
+        setTimeout(() => {
+            botao.textContent = 'Copiar';
+        }, 1500);
+    });
+});
