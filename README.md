@@ -6,8 +6,6 @@ Built as a front-end learning project with plain HTML, CSS, and JavaScript (no f
 
 https://nathaliadebona.github.io/devpocket/
 
-<img width="1832" height="3424" alt="nathaliadebona github io_devpocket_" src="https://github.com/user-attachments/assets/aa8a3bb3-b33c-4221-96b5-67d4933d065e" />
-
 ## Features
 
 - **Unit converter:** convert pixels to rem using a custom base font size (defaults to 16px)
@@ -38,7 +36,7 @@ No build step or dependencies needed.
 
 ## Screenshots
 
-_Coming soon._
+<img width="1832" height="3424" alt="nathaliadebona github io_devpocket_" src="https://github.com/user-attachments/assets/aa8a3bb3-b33c-4221-96b5-67d4933d065e" />
 
 ---
 
